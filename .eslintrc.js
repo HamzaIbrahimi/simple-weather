@@ -8,8 +8,9 @@ module.exports = {
     quotes: ['error', 'single'],
     'no-console': 'off',
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    camelcase: ['error', { properties: 'never' }],
   },
-  extends: ['eslint:recommended', 'airbnb-base', 'prettier'],
+  extends: ['airbnb-base', 'prettier'],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
