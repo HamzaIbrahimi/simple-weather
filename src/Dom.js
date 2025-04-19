@@ -3,24 +3,34 @@ import errorImage from '../images/cant-find.jpg';
 export const elems = {
   container: document.querySelector('.cardContainer'),
   form: document.querySelector('form'),
+  input: document.querySelector('input[type="text"]'),
 };
-export function displayInfo(country, condition, wind, img, weather, feelsLike) {
+export function displayInfo(
+  country,
+  condition,
+  wind,
+  img,
+  weather,
+  feelsLike,
+  unit,
+) {
+  const munit = unit === 'metric' ? 'km/h' : 'm/h';
   elems.container.innerHTML = '';
   elems.container.insertAdjacentHTML(
     'beforeend',
     `
     <div class="card">
-      <h3 id="country">${country}°</h3>
+      <h3 id="country">${country}</h3>
       <div></div>
       <div class="weatherConditions">
         <div id="condition">${condition}</div>
-        <div id="wind">${wind}</div>
+        <div id="wind">wind ${wind + munit}</div>
       </div>
       <div class="weatherDisplay">
         <img id="weatherImg" src="${img}" alt="not found">
-        <h1 id="weather">${weather}</h1>
+        <h1 id="weather">${weather}°</h1>
       </div>
-      <h3 id="feelsLike">Feels Like ${feelsLike}°</h3>
+      <h3 id="feelsLike">Feels like ${feelsLike}°</h3>
     </div>
     `,
   );
@@ -33,4 +43,14 @@ export function displayError() {
     ` <div class="card"><img id="errorImg" src="${errorImage}" alt=""></div>
         `,
   );
+}
+
+export function validateInput(input) {
+  if (input.validity.tooShort) {
+    input.setCustomValidity('The location name must be at least 4 characters');
+  } else if (!/^[a-zA-Z]{4,}$/.test(input.value)) {
+    input.setCustomValidity('Please use valid characters from the alphabet');
+  } else {
+    input.setCustomValidity('');
+  }
 }
