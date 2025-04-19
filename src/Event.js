@@ -21,10 +21,8 @@ export default class Events {
     const radio = document.querySelector('input[type="radio"]:checked');
     try {
       const weatherData = await this.fetch.get(input.value, radio.value);
-      console.log(weatherData);
       displayInfo(...weatherData, radio.value);
     } catch (error) {
-      console.error(error);
       displayError();
     }
   }
