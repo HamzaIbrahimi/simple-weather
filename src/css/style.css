@@ -136,13 +136,12 @@ img {
 
 .weatherDisplay {
   display: flex;
-  gap: 100px;
+  gap: 70px;
   align-items: center;
 }
 
 #weather {
-  font-size: 72px;
-  align-self: end;
+  font-size: 70px;
 }
 
 #feelsLike {
