@@ -15,8 +15,16 @@
     </nav>
   </header>
   <form action="">
-    <input type="text" placeholder="type a location" required minlength="4">
+    <input type="text" id="location_input" placeholder="type a location" required minlength="4">
     <button>Search</button>
+    <div>
+      <label for="metric">Metric</label>
+      <input type="radio" name="sys" id="metric" required value="metric">
+    </div>
+    <div>
+      <label for="US">US</label>
+      <input type="radio" name="sys" id="US" required value="us">
+    </div>
   </form>
   <div class="cardContainer">
   </div>
