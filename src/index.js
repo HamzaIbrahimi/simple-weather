@@ -2,6 +2,7 @@ import './css/normalize.css';
 import './css/style.css';
 import Event from './Event';
 
-const e = new Event();
-
-e.init();
+document.addEventListener('DOMContentLoaded', () => {
+  const e = new Event();
+  e.init();
+});
