@@ -23,9 +23,9 @@ export default class WeatherFetcher {
     return res.default;
   }
 
-  // country, condition, wind, img, weather, feelsLike
   static async #extractInfo(o) {
     const country = o.address;
+    const { resolvedAddress, description } = o;
     const { conditions, windspeed, icon, temp, feelslike } =
       o.currentConditions;
     const source = await WeatherFetcher.#importIcon(icon);
@@ -36,6 +36,8 @@ export default class WeatherFetcher {
       source,
       temp,
       feelslike,
+      resolvedAddress,
+      description,
     ];
   }
 }

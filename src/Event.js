@@ -9,7 +9,7 @@ export default class Events {
   init() {
     window.addEventListener('DOMContentLoaded', async () => {
       const weatherData = await this.fetch.get('Denmark', 'metric');
-      displayInfo(...weatherData);
+      displayInfo(...weatherData, 'metric');
     });
 
     elems.form.addEventListener('submit', (e) => {

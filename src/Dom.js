@@ -12,6 +12,8 @@ export function displayInfo(
   img,
   weather,
   feelsLike,
+  address,
+  desc,
   unit,
 ) {
   const munit = unit === 'metric' ? 'km/h' : 'm/h';
@@ -21,6 +23,7 @@ export function displayInfo(
     `
     <div class="card">
       <h3 id="country">${country}</h3>
+      <div id="resolvedAddress">${address}</div>
       <div></div>
       <div class="weatherConditions">
         <div id="condition">${condition}</div>
@@ -31,6 +34,7 @@ export function displayInfo(
         <h1 id="weather">${weather}°</h1>
       </div>
       <h3 id="feelsLike">Feels like ${feelsLike}°</h3>
+      <div id="description">Short Description: ${desc}</div>
     </div>
     `,
   );
