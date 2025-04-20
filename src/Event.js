@@ -1,4 +1,4 @@
-import { displayError, displayInfo, elems, validateInput } from './Dom';
+import { displayError, displayInfo, elems } from './Dom';
 import WeatherFetcher from './Fetch';
 
 export default class Events {
@@ -15,9 +15,6 @@ export default class Events {
     elems.form.addEventListener('submit', (e) => {
       e.preventDefault();
       this.submission();
-    });
-    elems.input.addEventListener('input', () => {
-      validateInput(elems.input);
     });
   }
 

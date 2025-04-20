@@ -44,13 +44,3 @@ export function displayError() {
         `,
   );
 }
-
-export function validateInput(input) {
-  if (input.validity.tooShort) {
-    input.setCustomValidity('The location name must be at least 4 characters');
-  } else if (!/^[a-zA-Z]{4,}$/.test(input.value)) {
-    input.setCustomValidity('Please use valid characters from the alphabet');
-  } else {
-    input.setCustomValidity('');
-  }
-}
