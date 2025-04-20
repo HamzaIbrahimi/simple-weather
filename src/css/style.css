@@ -98,13 +98,14 @@ img {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 10px 20px;
 }
 
 .card {
   margin: 0 auto;
   padding: 5px 30px;
   width: 400px;
-  height: 400px;
+  height: 450px;
   border-radius: 3px;
   background-color: #fff;
   box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.2);
@@ -116,7 +117,7 @@ img {
 }
 
 .card > *:not(#errorImg) {
-  padding-top: 20px;
+  padding-top: 15px;
 }
 
 #country {
@@ -124,8 +125,15 @@ img {
   font-family: 'Doodle_Font';
 }
 
-#country + div {
+#resolvedAddress + div {
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+#resolvedAddress,
+#description {
+  font-size: 15px;
+  opacity: 0.7;
+  font-style: italic;
 }
 
 .weatherConditions {
